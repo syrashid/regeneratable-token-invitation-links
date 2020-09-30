@@ -3,7 +3,7 @@ class Group < ApplicationRecord
   has_many :memberships
   has_many :users, through: :memberships
 
-  def has_member?(user)
+  def member?(user)
     users.include?(user)
   end
 end
