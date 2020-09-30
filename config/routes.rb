@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root to: 'groups#index'
 
   resources :groups, only: [] do
-    resources :memberships, only: [ :create ]
+    resources :memberships, only: [ :new, :create ]
   end
 end
