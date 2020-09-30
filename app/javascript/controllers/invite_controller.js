@@ -8,5 +8,6 @@ export default class extends Controller {
     this.urlTarget.setSelectionRange(0, 99999);
 
     document.execCommand("copy");
+    $('.toast').toast('show');
   }
 }
