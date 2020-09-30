@@ -1,11 +1,11 @@
 class MembershipsController < ApplicationController
-  skip_before_action :new
+  skip_before_action :authenticate_user!, only: :new
+
   def new
     if user_signed_in?
       create
     else
-      raise
-      redirect_to new_user_registration(invite_token: params[:group_id])
+      redirect_to new_user_registration_path(invite_token: params[:group_id])
     end
   end
 

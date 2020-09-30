@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   get '/kitchensink', to: 'pages#kitchensink' if Rails.env.development?
 
   root to: 'groups#index'
