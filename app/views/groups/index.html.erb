@@ -16,6 +16,8 @@
 
           <div id="collapse<%= group.id %>" class="collapse" aria-labelledby="heading<%= group.id %>" data-parent="#groupAccordion">
             <div class="card-body">
+              <h5>Invite Link:</h5>
+              <p><%= group_memberships_url(group) %></p>
               <h5>Group Members:</h5>
               <% group.users.each do |user| %>
                 <p><%= user.username %></p>

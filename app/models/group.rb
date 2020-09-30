@@ -6,4 +6,8 @@ class Group < ApplicationRecord
   def member?(user)
     users.include?(user)
   end
+
+  def to_param
+    "#{invite_token}-invitation"
+  end
 end
