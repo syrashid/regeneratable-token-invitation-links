@@ -17,7 +17,11 @@
           <div id="collapse<%= group.id %>" class="collapse" aria-labelledby="heading<%= group.id %>" data-parent="#groupAccordion">
             <div class="card-body">
               <h5>Invite Link:</h5>
-              <p><%= new_group_membership_url(group) %></p>
+              <input id="group_url" type="text" size="50" value="<%= new_group_membership_url(group) %>"/>
+              <div class="card-body__btns">
+                <button class="btn btn-outline-danger">Regenerate</button>
+                <button class="btn btn-outline-secondary">Copy Link</button>
+              </div>
               <h5>Group Members:</h5>
               <% group.users.each do |user| %>
                 <p><%= user.username %></p>
