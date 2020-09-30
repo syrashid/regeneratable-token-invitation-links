@@ -8,6 +8,6 @@ class Group < ApplicationRecord
   end
 
   def to_param
-    "#{invite_token}-invitation"
+    invite_token
   end
 end
