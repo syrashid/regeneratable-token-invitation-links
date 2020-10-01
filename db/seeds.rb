@@ -22,7 +22,7 @@ puts " Creating Groups 👨‍👩‍👧‍👦 "
 
 
 6.times do
-  Group.create(name: Faker::Movies::StarWars.call_sign, topic: Faker::Movies::StarWars.quote)
+  Group.create(name: Faker::Movies::LordOfTheRings.location, topic: Faker::Movies::StarWars.quote)
 end
 
 puts " Created #{Group.count} groups 👨‍❤️‍👨 "
