@@ -10,4 +10,8 @@ export default class extends Controller {
     document.execCommand("copy");
     $('.toast').toast('show');
   }
+
+  regenerate() {
+
+  }
 }
