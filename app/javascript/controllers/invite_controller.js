@@ -9,6 +9,8 @@ export default class extends Controller {
     this.urlTarget.setSelectionRange(0, 99999);
 
     document.execCommand("copy");
+
+    document.querySelector(".toast-body").innerHTML = "Link copied to clipboard!"
     $('.toast').toast('show');
   }
 
@@ -18,5 +20,7 @@ export default class extends Controller {
     const data = await response.json();
 
     this.urlTarget.value = data.link;
+    document.querySelector(".toast-body").innerHTML = "Fresh link generated!"
+    $('.toast').toast('show');
   }
 }
