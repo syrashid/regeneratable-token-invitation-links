@@ -17,6 +17,6 @@ export default class extends Controller {
     const response = await fetch(`/groups/${groupId}/invite_link`, { headers: { accept: "application/json" } });
     const data = await response.json();
 
-    console.log(data);
+    this.urlTarget.value = data.link;
   }
 }
