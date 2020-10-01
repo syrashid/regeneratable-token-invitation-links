@@ -1,4 +1,5 @@
 import { Controller } from "stimulus"
+import { fetchWithToken } from "../utils/fetch_with_token";
 
 export default class extends Controller {
   static targets = ['url'];
@@ -12,6 +13,8 @@ export default class extends Controller {
   }
 
   regenerate() {
+    const groupId = this.urlTarget.dataset.groupId;
+
 
   }
 }

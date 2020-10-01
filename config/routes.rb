@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :groups, only: [] do
     resources :memberships, only: [ :new, :create ]
-    resource :invite_link, only: [ :new ]
+    resource :invite_link, only: [ :create ]
   end
 
 end
