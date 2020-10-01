@@ -1,8 +1,8 @@
 <%- if controller_name != 'sessions' %>
   <% if @group %>
-    <%= link_to "Log in", new_session_path(resource_name, invite_token: @group.invite_token), class: "btn btn-primary btn-block mb-3" %>
+    <%= link_to "Log in", new_session_path(resource_name, invite_token: @group.invite_token), class: "btn btn-outline-primary btn-block mb-3" %>
   <% else %>
-    <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-primary btn-block mb-3" %>
+    <%= link_to "Log in", new_session_path(resource_name), class: "btn btn-outline-primary btn-block mb-3" %>
   <% end %>
 <% end %>
 
