@@ -1,6 +1,8 @@
 .group-box {
   width: 500px;
   background-color: white;
+  max-height: 80vh;
+  overflow: scroll;
 }
 
 @media only screen and (max-width: 600px) {
