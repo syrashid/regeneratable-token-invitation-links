@@ -3,6 +3,41 @@
   background-color: white;
   max-height: 80vh;
   overflow: scroll;
+  border-radius: $gray;
+
+  .group-box__header {
+    background-color: $blue;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1px;
+    align-items: center;
+    padding: 16px 24px;
+  }
+
+  h3, h5 {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    display: block;
+  }
+  .btn-link {
+    text-decoration: none;
+    padding: 0;
+  }
+  .card-header {
+    background-color: $light-gray;
+    border-bottom: 0;
+    padding: 16px 24px;
+    text-align: left;
+  }
+}
+
+.group-box__header {
+  a {
+    color: $light-gray;
+  }
 }
 
 .group-url {
