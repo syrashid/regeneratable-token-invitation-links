@@ -1,4 +1,5 @@
-<div class="toast toast--copy" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 24px; right: 24px;" data-delay="2000">
+<%# Bootstrap toast for notifications %>
+<div class="toast toast--copy" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 24px; right: 24px; z-index: 10;" data-delay="2000">
   <div class="toast-header" >
     <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/4_grande.png?v=1571606116" class="rounded mr-2" alt="party">
     <strong class="mr-auto">Notification</strong>
@@ -11,9 +12,7 @@
   </div>
 </div>
 
-
-<%# TODO: Add a toast for when a link is regenerated %>
-
+<%# Primary container holding user groups %>
 <div class="group-box">
   <div class="group-box__header">
     <h4>Welcome <%= current_user.username%></h4>
@@ -35,7 +34,7 @@
             <div class="card-body">
               <div class="invite-box" data-controller="invite">
                 <h5>Invite Link:</h5>
-                <input class="group-url" type="text" size="50" value="<%= new_group_membership_url(group) %>" data-target="invite.url" data-group-id="<%= group.id %>"/>
+                <input class="group-url" type="text" value="<%= new_group_membership_url(group) %>" data-target="invite.url" data-group-id="<%= group.id %>"/>
                 <div class="card-body__btns">
                   <button class="btn btn-outline-danger" data-action="click->invite#regenerate">Regenerate</button>
                   <button class="btn btn-outline-secondary" data-action="click->invite#copy">Copy Link</button>
