@@ -12,9 +12,11 @@ export default class extends Controller {
     $('.toast').toast('show');
   }
 
-  regenerate() {
+  async regenerate() {
     const groupId = this.urlTarget.dataset.groupId;
+    const response = await fetch(`/groups/${groupId}/invite_link`, { headers: { accept: "application/json" } });
+    const data = await response.json();
 
-
+    console.log(data);
   }
 }
