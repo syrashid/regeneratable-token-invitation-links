@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/kitchensink', to: 'pages#kitchensink' if Rails.env.development?
 
-  root to: 'groups#index'
+  root 'groups#index'
 
   resources :groups, only: [] do
     resources :memberships, only: [ :new, :create ]
