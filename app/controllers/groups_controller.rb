@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.joins(memberships: :user).where(memberships: { user: current_user })
+    @groups = current_user.groups
   end
 end
