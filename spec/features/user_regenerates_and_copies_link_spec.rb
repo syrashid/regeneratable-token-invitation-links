@@ -9,17 +9,16 @@ feature "Users regenerates and copies invite link..." do
 
     # Exercise
     ## Log In
-    visit root_path
-    fill_in "Email", with: "sam@hobbit.com"
-    fill_in "Password", with: "password"
-    click_button("commit")
+
+    sign_in_as(sam)
 
     ## Regenerate
     click_on("Mordor")
     old_invite_link = find_field("cb-link-field").value
-    click_on("Regenerate")
-    # expect(find_field(".cb-link-field").value).to eq 'John'
+    click_button("regenerate-btn")
+
     # Verify
+
     expect(old_invite_link).not_to eq(find_field("cb-link-field").value)
 
     # Teardown

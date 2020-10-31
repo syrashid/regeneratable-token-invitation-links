@@ -20,6 +20,7 @@ export default class extends Controller {
     const data = await response.json();
 
     this.urlTarget.value = data.link;
+    this.urlTarget.setAttribute('value', data.link);
     document.querySelector(".toast-body").innerHTML = "Fresh link generated!"
     $('.toast').toast('show');
   }
