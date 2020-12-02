@@ -14,12 +14,12 @@ feature "Users regenerates invite link" do
 
     ## Regenerate
     click_on("Mordor")
-    old_invite_link = find_field("cb-link-field").value
+    old_invite_token = mordor.invite_token
     click_button("regenerate-btn")
 
     # Verify
 
-    expect(old_invite_link).not_to eq(find_field("cb-link-field").value)
+    expect(old_invite_token).not_to eq(mordor.invite_token)
 
     # Teardown
     Membership.destroy_all
