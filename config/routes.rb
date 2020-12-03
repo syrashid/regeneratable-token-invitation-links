@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'groups#index'
 
-  resources :groups, param: :slug, only: :show do
+  resources :groups, param: :invite_token, only: :show do
     resources :memberships, only: [ :new, :create ]
     resource :invite_link, only: [ :show ]
   end

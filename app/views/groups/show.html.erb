@@ -1,0 +1,52 @@
+<%# Bootstrap toast for notifications %>
+<div class="toast toast--copy" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; top: 24px; right: 24px; z-index: 10;" data-delay="2000">
+  <div class="toast-header" >
+    <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/4_grande.png?v=1571606116" class="rounded mr-2" alt="party">
+    <strong class="mr-auto">Notification</strong>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Link copied to clipboard!
+  </div>
+</div>
+
+<%# Primary container holding user groups %>
+<div class="group-box">
+  <div class="group-box__header">
+    <h3><%= current_user.username%> Dashboard</h3>
+    <%= link_to "Log out  <i class='fas fa-sign-out-alt'></i>".html_safe, destroy_user_session_path, method: :delete %>
+  </div>
+  <div class="group-box__groups">
+    <div class="accordion" id="groupAccordion">
+
+        <div class="card">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<%= @group.id %>" aria-expanded="true" aria-controls="collapse<%= @group.id %>">
+                <div class="card-header" id="group<%= @group.id %>">
+                  <h5><%= @group.name %></h5>
+                </div>
+
+              </button>
+          <div id="collapse<%= @group.id %>" class="collapse" aria-labelledby="heading<%= @group.id %>" data-parent="#groupAccordion">
+            <div class="card-body">
+              <div class="invite-box mb-4" data-controller="invite">
+                <h5 class="mb-1">Invite Link:</h5>
+                <input class="group-url" id="cb-link-field" type="text" value="<%= new_group_membership_url(@group) %>" data-target="invite.url" data-group-id="<%= @group.id %>"/>
+                <div class="card-body__btns mt-2">
+                  <button id="regenerate-btn" class="btn btn-outline-primary" data-action="click->invite#regenerate">Regenerate</button>
+                  <button class="btn btn-primary" data-action="click->invite#copy">Copy Link</button>
+                </div>
+              </div>
+              <h5 class="mb-3">Group Members:</h5>
+              <% @group.memberships.each do |membership| %>
+                <p class="text-secondary">
+                  <%= membership.user.username %> joined <%= membership.created_at.strftime("%D") %>
+                </p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
