@@ -20,7 +20,7 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.hidden_field :invite_token, :value => @group.invite_token if @group %>
+      <%= f.hidden_field :invite_token, value: @group.invite_token if @group %>
     </div>
 
     <div class="form-actions">

@@ -7,6 +7,10 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-outline-primary btn-block" %>
+  <% if @group %>
+    <%= link_to "Sign up", new_registration_path(resource_name, invite_token: @group.invite_token), class: "btn btn-outline-primary btn-block" %>
+  <% else %>
+    <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-outline-primary btn-block" %>
+  <% end %>
 <% end %>
 
