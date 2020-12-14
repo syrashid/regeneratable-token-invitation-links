@@ -16,4 +16,9 @@ RSpec.describe User, type: :model do
       expect(invalid_user).to_not be_valid
     end
   end
+
+  context 'association tests' do
+    it { should have_many(:groups) }
+    it { should have_many(:memberships) }
+  end
 end
