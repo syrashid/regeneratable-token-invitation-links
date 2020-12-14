@@ -11,7 +11,9 @@ RSpec.describe User, type: :model do
       expect(invalid_user).to_not be_valid
     end
     it 'ensures a username is unique' do
-
+      valid_user = create(:user, username: 'sample_name')
+      invalid_user = build(:user, username: 'sample_name')
+      expect(invalid_user).to_not be_valid
     end
   end
 end
