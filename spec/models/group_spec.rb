@@ -31,4 +31,22 @@ RSpec.describe Group, type: :model do
       expect(group.to_param).not_to eq(group.id.to_s)
     end
   end
+
+  describe '#member? method' do
+    it 'a group when passed an outside member should return false' do
+      out_of_group_user = create(:user)
+      membership = create(:membership)
+      group = membership.group
+
+      expect(group.member?(out_of_group_user)).to be false
+    end
+
+    it 'a group when passed a group member should return true' do
+      user = create(:user)
+      membership = create(:membership, user: user)
+      group = membership.group
+
+      expect(group.member?(user)).to be true
+    end
+  end
 end
