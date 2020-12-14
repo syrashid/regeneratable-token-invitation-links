@@ -22,4 +22,13 @@ RSpec.describe Group, type: :model do
       expect(group.invite_token).not_to eq(old_token)
     end
   end
+
+  describe '#to_param method' do
+    it 'a group will return invite_token instead of id when to_param is called' do
+      group = create(:group)
+
+      expect(group.to_param).to eq(group.invite_token)
+      expect(group.to_param).not_to eq(group.id.to_s)
+    end
+  end
 end
