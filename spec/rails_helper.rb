@@ -78,6 +78,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+   config.include FactoryBot::Syntax::Methods
+
 end
 
 Shoulda::Matchers.configure do |config|

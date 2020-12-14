@@ -101,6 +101,11 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     faker (2.15.1)
       i18n (>= 1.6, < 2)
     ffi (1.13.1)
@@ -279,6 +284,7 @@ DEPENDENCIES
   database_cleaner-active_record
   devise
   dotenv-rails
+  factory_bot_rails
   faker
   font-awesome-sass
   jbuilder (~> 2.7)
