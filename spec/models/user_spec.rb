@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'validation tests' do
+  describe 'validation tests written vanilla' do
     it 'a user is valid with a username present' do
       valid_user = build(:user)
       expect(valid_user).to be_valid
@@ -17,7 +17,12 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context 'association tests' do
+  describe 'validation tests written with shoulda matchers' do
+    it { should validate_presence_of(:username) }
+    it { should validate_uniqueness_of(:username) }
+  end
+
+  describe 'association tests' do
     it { should have_many(:groups) }
     it { should have_many(:memberships) }
   end
