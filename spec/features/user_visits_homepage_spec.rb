@@ -9,15 +9,13 @@ feature "Users visits root..." do
 
   scenario "and sees personal dashboard after logging in" do
     # Set Up
-    maya = User.create!(username: 'maya_nicolas', email: 'gracia@baumbach.com', password: 'password')
+    user = create(:user, username: 'user_username')
 
     # Exercise
-    sign_in_as(maya)
+    sign_in user
+    visit root_path
 
     # Verify
-    expect(page).to have_css('h3', text: 'maya_nicolas Dashboard')
-
-    # Teardown
-    User.destroy_all
+    expect(page).to have_css('h3', text: 'user_username Dashboard')
   end
 end

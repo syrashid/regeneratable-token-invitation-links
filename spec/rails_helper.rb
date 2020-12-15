@@ -78,10 +78,10 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-   config.include FactoryBot::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
-   config.include Devise::Test::IntegrationHelpers, type: :request
-
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end
 
 Shoulda::Matchers.configure do |config|
