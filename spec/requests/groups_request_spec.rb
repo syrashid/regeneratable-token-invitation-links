@@ -9,14 +9,13 @@ RSpec.describe "Groups", type: :request do
     end
 
     it 'should show a users groups when signed in' do
-      group = create(:group)
       user = create(:user, username: 'unique_username')
       sign_in user
 
-      get group_path(group)
+      get root_path
 
       expect(response).to be_successful
-      expect(response.body).to include('unique_username')
+      expect(response.body).to include('unique_username Dashboard')
     end
 
   end
@@ -30,7 +29,7 @@ RSpec.describe "Groups", type: :request do
       get group_path(group)
 
       expect(response).to be_successful
-      expect(response.body).to include('unique_username')
+      expect(response.body).to include('unique_username Group Show')
     end
 
     xit 'should show a single group when signed in and a member of a group' do
