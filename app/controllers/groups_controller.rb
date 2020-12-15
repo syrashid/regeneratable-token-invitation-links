@@ -4,6 +4,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:invite_token])
+    @group = Group.find_by_invite_token(params[:invite_token])
   end
 end
