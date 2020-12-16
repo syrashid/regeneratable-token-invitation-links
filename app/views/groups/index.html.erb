@@ -32,7 +32,7 @@
             <div class="card-body">
               <div class="invite-box mb-4" data-controller="invite">
                 <h5 class="mb-1">Invite Link:</h5>
-                <input class="group-url" id="cb-link-field" type="text" value="<%= new_group_membership_url(group) %>" data-target="invite.url" data-group-id="<%= group.id %>"/>
+                <input class="group-url" id="cb-link-field" type="text" value="<%= new_group_membership_url(group) %>" data-target="invite.url" data-group-token="<%= group.invite_token %>"/>
                 <div class="card-body__btns mt-2">
                   <button id="regenerate-btn" class="btn btn-outline-primary" data-action="click->invite#regenerate">Regenerate</button>
                   <button class="btn btn-primary" data-action="click->invite#copy">Copy Link</button>

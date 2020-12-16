@@ -15,11 +15,12 @@ export default class extends Controller {
   }
 
   async regenerate() {
-    const groupId = this.urlTarget.dataset.groupId;
-    const response = await fetch(`/groups/${groupId}/invite_link`, { headers: { accept: "application/json" } });
+    const groupToken = this.urlTarget.dataset.groupToken;
+    const response = await fetch(`/groups/${groupToken}/invite_link`, { headers: { accept: "application/json" } });
     const data = await response.json();
 
     this.urlTarget.value = data.link;
+    this.urlTarget.setAttribute('data-group-token', data.invite_token);
     this.urlTarget.setAttribute('value', data.link);
     document.querySelector(".toast-body").innerHTML = "Fresh link generated!"
     $('.toast').toast('show');
