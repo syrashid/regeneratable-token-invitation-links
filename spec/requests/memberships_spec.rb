@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Memberships", type: :request do
-  describe "GET meberships#new" do
+  describe "GET memberships#new" do
     context "A user signed in" do
       it "should create a membership if none exists" do
         group = create(:group)
