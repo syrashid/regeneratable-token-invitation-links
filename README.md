@@ -1,4 +1,4 @@
-# Regerneratable Invitation Links for Groups
+# Regeneratable Invitation Links for Groups
 
 Repo for two articles written on how to create custom urls, and then using those urls to invite users to join groups
 Both articles can be found below 👇
